@@ -89,7 +89,7 @@ def main():
         </style>
         """ ,unsafe_allow_html=True)
     st.sidebar.title("Navigation")
-    menu_options = ["Home", "Login", "Signup", "Your Caretakers", "Daily Reminders", "Health Monitor", "Safety Monitor","Connect Device"]
+    menu_options = ["Home", "Login", "Signup", "Your Caretakers", "Daily Reminders", "Health Monitor", "Safety Monitor"]
     choice = st.sidebar.selectbox("Menu", menu_options)
 
     if choice == "Home":
@@ -314,18 +314,6 @@ def show_safety_monitor():
             blinking_alert("🟢 Final Decision (Majority Vote): SAFE ✅", "green")
 
 
-#To work on.....
-async def scan():
-    devices = await BleakScanner.discover()
-    st.subheader("Available devices are:")
-    for d in devices:
-        st.write(f"{d.name} - {d.address}")
-def connect_device():
-    st.title("⌚ Connect Device")
-    if not st.session_state.get("logged_in"):
-        st.warning("Please log in to add caretakers.")
-        return
-    asyncio.run(scan())
 
 
 if __name__ == "__main__":

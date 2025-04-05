@@ -30,20 +30,20 @@ reminders_collection = db["Reminders"]
 #Loading the models for health_monitor..
 @st.cache_resource
 def health_monitor_models():
-    knn = pickle.load(open(r"C:\Users\Administrator\Downloads\Dataset\app\models\health_monitor\knn_model.pkl", "rb"))
-    lr = pickle.load(open(r"C:\Users\Administrator\Downloads\Dataset\app\models\health_monitor\logistic_regression_model.pkl", "rb"))
-    svm = pickle.load(open(r"C:\Users\Administrator\Downloads\Dataset\app\models\health_monitor\svm_model.pkl", "rb"))
+    knn = pickle.load(open("models\health_monitor\knn_model.pkl", "rb"))
+    lr = pickle.load(open("models\health_monitor\logistic_regression_model.pkl", "rb"))
+    svm = pickle.load(open("models\health_monitor\svm_model.pkl", "rb"))
     return knn, lr, svm
 
 
 #Load models for safety_monitor
 @st.cache_resource
 def safety_monitor_models():
-    with open(r"C:\Users\Administrator\Downloads\Dataset\app\models\safety_monitor\knn_model.pkl", "rb") as f1:
+    with open("models\safety_monitor\knn_model.pkl", "rb") as f1:
         knn_model = pickle.load(f1)
-    with open(r"C:\Users\Administrator\Downloads\Dataset\app\models\safety_monitor\logistic_regression_model.pkl", "rb") as f2:
+    with open("models\safety_monitor\logistic_regression_model.pkl", "rb") as f2:
         lr_model = pickle.load(f2)
-    with open(r"C:\Users\Administrator\Downloads\Dataset\app\models\safety_monitor\svm_model.pkl", "rb") as f3:
+    with open("models\safety_monitor\svm_model.pkl", "rb") as f3:
         svm_model = pickle.load(f3)
     return knn_model, lr_model, svm_model
 

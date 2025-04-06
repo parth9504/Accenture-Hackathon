@@ -14,10 +14,7 @@ from bleak import BleakScanner
 import streamlit.components.v1 as components
 
 
-load_dotenv()  # load environment variables from .env file
-
-# Access the MongoDB URI
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URI = st.secrets["MONGO_URI"]
 
 # Connect to MongoDB
 client = MongoClient(MONGO_URI)

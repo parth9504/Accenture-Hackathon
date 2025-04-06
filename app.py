@@ -76,19 +76,6 @@ def blinking_alert(text, color):
 
 # Main app structure
 def main():
-    theme = st.get_option("theme.base")
-    if theme == "Light":
-        st.markdown(
-            """
-            <style>
-            .stApp {
-                background-image: url('https://t4.ftcdn.net/jpg/02/51/52/07/360_F_251520703_7oFW1TM6bNJMLs4QIS0ZUJF4utkXAuU7.jpg');
-                background-size: cover;
-            }
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
     st.sidebar.title("Navigation")
     menu_options = ["Home", "Login", "Signup", "Your Caretakers", "Daily Reminders", "Health Monitor", "Safety Monitor"]
     choice = st.sidebar.selectbox("Menu", menu_options)

@@ -77,7 +77,7 @@ def blinking_alert(text, color):
 # Main app structure
 def main():
     theme = st.get_option("theme.base")
-    if theme == "light":
+    if theme == "Light":
         st.markdown(
             """
             <style>

@@ -111,7 +111,7 @@ def show_home():
     st.subheader("Hope you're doing well today")
     st.text("Please use the navigation bar for any kind of help 😊")
     if not st.session_state.get("logged_in"):
-        st.warning("Please log in to add caretakers.")
+        st.warning("Please log in to access the portal")
         return
 
 def show_login():
@@ -128,7 +128,7 @@ def show_login():
             st.session_state.user = {}
             st.success("🚪 Logged out successfully.")
         return
-
+    st.info("**Demo Login:**\n- Email: `kp@gmail.com`\n- Password: `abcd1234`", icon="ℹ️")
     email = st.text_input("Email")
     password = st.text_input("Password", type="password")
 
@@ -166,7 +166,7 @@ def show_add_caretaker():
     st.title("🤝 Add Caretaker")
 
     if not st.session_state.get("logged_in"):
-        st.warning("Please log in to add caretakers.")
+        st.warning("Please log in to access the portal")
         return
 
     user_email = st.session_state.user["email"]
@@ -260,7 +260,7 @@ def show_daily_reminder():
 def show_health_monitor():
     st.title("🩺 Health Monitor")
     if not st.session_state.get("logged_in"):
-        st.warning("Please log in to add caretakers.")
+        st.warning("Please log in to access the portal")
         return
     knn_model, lr_model, svm_model = health_monitor_models()
 
@@ -283,7 +283,7 @@ def show_health_monitor():
 def show_safety_monitor():
     st.title("🛡️ Safety Monitor")
     if not st.session_state.get("logged_in"):
-        st.warning("Please log in to add caretakers.")
+        st.warning("Please log in to access the portal")
         return
     knn_model, lr_model, svm_model = safety_monitor_models()
 
